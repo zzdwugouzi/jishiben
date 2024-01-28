@@ -56,30 +56,3 @@ location / {
     rewrite ^/([a-zA-Z0-9_-]+)$ /index.php?note=$1;
 }
 ```
-
-## 安装 golang 版本
-
-下载文件，相应的文件结构应如下
-
-```
-.
-├── go.mod
-├── main.go
-└── static
-       ├── index.html
-       ├── favicon.svg
-       ├── script.js 
-       └── styles.css 
-```
-
-安装 go 运行环境，进入文件目录，输入以下命令编译，得到二进制 `pb` 可运行文件，默认监听 9099 端口
-
-```sh
-go get -d -v ./...
-go env -w GO111MODULE=on
-CGO_ENABLED=0 go build -ldflags="-s -w" -o pb ./
-```
-
-## 特性
-
-url 末尾加上 `?raw` 进入只读模式
