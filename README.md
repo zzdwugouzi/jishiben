@@ -3,14 +3,6 @@
 - [pereorga/minimalist-web-notepad](https://github.com/pereorga/minimalist-web-notepad)
 - [fghwett/minimalist-web-notepad](https://github.com/fghwett/minimalist-web-notepad)
 
-## 版本选择说明
-
-> php-mysql 数据库版，php 实现
-> 
-> golang 本地版，go 实现，记得在运行文件 `pb` 所在的目录下创建 `_tmp` 目录
-
-## 安装 php-mysql 版本
-
 下载文件，相应的文件结构应如下
 
 ```
