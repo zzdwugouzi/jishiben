@@ -39,7 +39,17 @@ CREATE TABLE notes (
 
 在没有错误其他的前提下，如果检测数据表正确，但无法正常写入内容，说明 notes 数据表可能不是由本项目所创建的，表结构有所不同，请考虑更改 index.php 中的数据表名称，并初始化（别忘了修改初始化命令中的 `notes` 为新名称）。或删除原有的 notes 表，重新初始化
 
-如果使用 Apache 网页服务，下载 `.htaccess` 文件，放到网站目录
+如果使用 Apache 网页服务，写入以下内容到 `.htaccess` 文件，放到网站目录
+
+```
+Options -Indexes
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?note=$1 [QSA]
+
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag: "noindex, nofollow"
+</IfModule>
+```
 
 如果使用 Nginx 网页服务，在配置文件中添加下列内容
 
